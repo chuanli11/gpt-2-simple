@@ -1,3 +1,41 @@
+# Lambda Notes
+
+### Convert to TensorFlow 2
+
+These are the steps to converst the code to work with TensorFlow 2.0
+
+* Create virtualenv for TF2
+
+```
+virtualenv -p /usr/bin/python3.6 venv-tf2
+. venv-tf2/bin/activate
+
+# Remove the tensorflow in requirements.txt
+pip install tensorflow-gpu==2.0
+pip install -r requirements.txt
+```
+
+* Remove the `memory_saving_gradients` stuff
+
+* Remove the `.value` stuff
+
+* Use the automatic tool to convert
+
+tf_upgrade_v2 --intree gpt_2_simple/ \
+  --outtree gpt_2_simple_v2/ \
+  --reportfile report.txt
+
+* Change `import gpt2_2_simple` to `import gpt_2_simple_v2` in all files
+
+* Add `tf.compat.v1.disable_eager_execution()` to `gpt_2.py`
+
+### Test
+
+```
+python test_v2.py 
+```
+
+
 # gpt-2-simple
 
 ![gen_demo](docs/gen_demo.png)

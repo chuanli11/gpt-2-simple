@@ -1,4 +1,3 @@
-tensorflow
 regex
 requests
 tqdm

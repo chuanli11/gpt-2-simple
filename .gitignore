@@ -6,3 +6,8 @@ shakespeare.txt
 dist/
 gpt_2_simple.egg-info/
 build/
+venv-tf2/
+models/
+checkpoint/
+samples/
+report.txt

@@ -21,9 +21,11 @@ try:
 except:
     pass
 
-from gpt_2_simple.src import model, sample, encoder
-from gpt_2_simple.src.load_dataset import load_dataset, Sampler
-from gpt_2_simple.src.accumulate import AccumulatingOptimizer
+from gpt_2_simple_v2.src import model, sample, encoder
+from gpt_2_simple_v2.src.load_dataset import load_dataset, Sampler
+from gpt_2_simple_v2.src.accumulate import AccumulatingOptimizer
+
+tf.compat.v1.disable_eager_execution()
 
 
 def download_file_with_progress(url_base, sub_dir, model_name, file_name):
